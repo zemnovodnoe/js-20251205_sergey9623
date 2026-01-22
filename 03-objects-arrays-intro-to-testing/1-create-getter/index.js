@@ -8,10 +8,12 @@ export function createGetter(path) {
 
   return (obj) => {
     for (const field of fields) {
-      if (!obj.hasOwnProperty(field)) {return undefined;}
-    
-      obj = obj[field];
-    }
+      if (obj && Object.hasOwn(obj, field)) {
+        obj = obj[field];
+      } else {
+        return undefined;
+      }
+    } 
     return obj;
   };
 }

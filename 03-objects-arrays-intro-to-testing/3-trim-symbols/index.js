@@ -5,10 +5,10 @@
  * @returns {string} - the new string without extra symbols according passed size
  */
 export function trimSymbols(string, size) {
-  if (size == undefined) {return string.slice();}
-  if (!size) {return '';}
+  if (size === undefined) {return string.slice();}
+  if (size === 0) {return '';}
 
-  let arr = new Array();
+  let arr = [];
   let repeatCnt = 0;
   let prevLetter = '';
 
